@@ -1,0 +1,171 @@
+/* Existing CSS rules */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-left: 30%;
+}
+h4 {
+  font-size: 1.5em;
+  line-height: 1.1;
+
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin-left: 28%;
+}
+
+.sim-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin: 1%;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4a34c5;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (min-width: 768px) {
+  .sim-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sim-left,
+.sim-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* New CSS for the Game Dashboard */
+.dashboard-container {
+  padding: 2.5rem; /* Slightly larger padding */
+  text-align: center;
+}
+
+.dashboard-title {
+  font-size: 2.5rem; /* Adjusted font size */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-left: auto; /* Center the title */
+  margin-right: auto;
+  width: fit-content; /* Adjust width to content */
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+  }
+}
+
+.game-card {
+  position: relative;
+  background-color: #333; /* Dark background for the card */
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none; /* Remove link underline */
+  color: white; /* Default text color for the link */
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-container {
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio for thumbnails */
+  overflow: hidden;
+}
+
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.game-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.game-description {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.game-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-text {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
